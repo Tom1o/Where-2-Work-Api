@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Where 2 Work{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">☕️ Where 2 Work 💻</h1>
+  <p class="lead">Sick of working from home? Why not a Coffee Shop?</p>
+  <hr class="my-4">
+  <a class="btn btn-warning btn-lg" href="{{ url_for('get_all_cafes') }}" role="button">Show All!</a>
+  <a class="btn btn-warning btn-lg" href="{{ url_for('get_random_cafe') }}" role="button">Choose for me!</a>
+</div>
+    </div>
+
+{% endblock %}

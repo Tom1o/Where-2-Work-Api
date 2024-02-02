@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}{{cafe.name}}{% endblock %}
+
+{% block content %}
+<body class="jumbotron">
+    <div class="p-5 text-center bg-image rounded-3 hero" style="
+    background-image: url({{ cafe.img_url }});
+    width: 100vw;
+    height: 100vh;
+  ">
+    </div>
+      <div class="bg-text" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="container my-5">
+          <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <h3>Why not try?</h3>
+            <h1 class="text-body-emphasis">{{cafe.name}}</h1>
+            <p class="lead">
+              in {{ cafe.location }}
+            </p>
+              <table class="table table-dark table-striped table-hover">
+              <thead>
+              <tr>
+                <th scope="col">Wifi</th>
+                <th scope="col">Toilets</th>
+                <th scope="col">Sockets</th>
+                <th scope="col">Calls</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  {% if cafe['has_sockets'] == 1 %}
+                    <td>✅</td>
+                    {% else %}
+                    <td>❌</td>
+                    {% endif %}
+
+                    {% if cafe['has_toilet'] == 1 %}
+                    <td>✅</td>
+                    {% else %}
+                    <td>❌</td>
+                    {% endif %}
+
+                    {% if cafe['has_wifi'] == 1 %}
+                    <td>✅</td>
+                    {% else %}
+                    <td>❌</td>
+                    {% endif %}
+
+                    {% if cafe['can_take_calls'] == 1 %}
+                    <td>✅</td>
+                    {% else %}
+                    <td>❌</td>
+                    {% endif %}
+              </tr>
+              </tbody>
+              </table>
+              <a class="btn btn-warning btn-lg" href="{{ cafe.map_url }}" role="button">Take Me There!</a>
+          </div>
+        </div>
+      </div>
+</body>
+{% endblock %}
