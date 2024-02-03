@@ -3,13 +3,19 @@
 
 {% block content %}
 <div class="jumbotron text-center">
-    <div class="container">
-  <h1 class="display-4">☕️ Where 2 Work 💻</h1>
-  <p class="lead">Sick of working from home? Why not a Coffee Shop?</p>
-  <hr class="my-4">
-  <a class="btn btn-warning btn-lg" href="{{ url_for('get_all_cafes') }}" role="button">Show All!</a>
-  <a class="btn btn-warning btn-lg" href="{{ url_for('get_random_cafe') }}" role="button">Choose for me!</a>
-</div>
+    <div class="p-5 text-center bg-image rounded-3 hero" style="
+    background-image: url('static/images/working-at-cafe.jpg');
+    width: 100vw;
+    height: 100vh;
+  ">
     </div>
+    <div class="container bg-text">
+        <h1 class="display-4">☕️ Where 2 Work 💻</h1>
+        <p class="lead">Sick of working from home? Why not a Coffee Shop?</p>
+        <hr class="my-4">
+        <a class="btn btn-light btn-lg" href="{{ url_for('get_all_cafes') }}" role="button">Show All!</a>
+        <a class="btn btn-light btn-lg" href="{{ url_for('get_random_cafe') }}" role="button">Choose for me!</a>
+    </div>
+</div>
 
 {% endblock %}
