@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}{{cafe.name}}{% endblock %}
-
+{% include 'header.html' %}
 {% block content %}
 
 <body class="jumbotron">
@@ -58,8 +58,6 @@
               </table>
               <a class="btn btn-light btn-lg" href="{{ cafe.map_url }}" role="button">Take Me There!</a>
               <a class="btn btn-light btn-lg" href="{{ url_for('get_random_cafe') }}" role="button">Pick Me Another!</a>
-              <a class="btn btn-light btn-lg" href="{{ url_for('home') }}" role="button">Home</a>
-
           </div>
         </div>
       </div>
