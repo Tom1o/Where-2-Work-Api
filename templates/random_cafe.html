@@ -2,6 +2,7 @@
 {% block title %}{{cafe.name}}{% endblock %}
 
 {% block content %}
+
 <body class="jumbotron">
     <div class="p-5 text-center bg-image rounded-3 hero" style="
     background-image: url({{ cafe.img_url }});
@@ -9,6 +10,7 @@
     height: 100vh;
   ">
     </div>
+
       <div class="bg-text" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="container my-5">
           <div class="p-5 text-center bg-body-tertiary rounded-3">
@@ -56,6 +58,8 @@
               </table>
               <a class="btn btn-light btn-lg" href="{{ cafe.map_url }}" role="button">Take Me There!</a>
               <a class="btn btn-light btn-lg" href="{{ url_for('get_random_cafe') }}" role="button">Pick Me Another!</a>
+              <a class="btn btn-light btn-lg" href="{{ url_for('home') }}" role="button">Home</a>
+
           </div>
         </div>
       </div>
